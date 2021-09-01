@@ -23,7 +23,14 @@ const MyNavbar = ({ title, color, history, location, match }) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Link href="#features">Menu</Nav.Link>
+                    <Link to="/menu">
+                        <div className={
+                            location.pathname === '/menu'
+                                ? "nav-link active"
+                                : "nav-link"
+                        }>Menu</div>
+                        {/* <div className={"nav-link" + location.pathname === '/reservations' ? ' active' : ''}>Reservations</div> */}
+                    </Link>
                     <Link to="/reservations">
                         <div className={
                             location.pathname === '/reservations'
