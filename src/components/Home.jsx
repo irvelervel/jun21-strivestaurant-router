@@ -2,8 +2,6 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import dishes from '../data/menu.json'
 import { useState } from 'react'
 import DishComments from './DishComments'
-import ReservationForm from './ReservationForm'
-import Reservations from './Reservations'
 // dishes is an array of 5 objects
 // each object is a pasta dish
 // I want to create a carousel slide for each pasta dish
@@ -13,7 +11,7 @@ import Reservations from './Reservations'
 // because Home currently is a FUNCTIONAL COMPONENT,
 // we need to convert it! it's pretty easy :)
 
-const Home = () => {
+const Home = ({ location, history, match }) => {
     // the only mandatory method in a class component is render()
     // render() is in charge of returning the JSX
 

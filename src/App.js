@@ -20,9 +20,12 @@ const App = () => {
         {/* <MyNavbar title="Magda" color="light" /> */}
         {/* <MyNavbar /> */}
         {/* I want the <Home /> component to load just on '/' */}
-        <Route path="/" exact component={Home} />
+        {/* <Route path="/" exact component={Home} /> */}
+        <Route path="/" exact render={(routerProps) => <Home {...routerProps} name="Stefano" />} />
+        {/* spreading over routerProps will give the Home component history, location and match as well */}
+        {/* Route is a HOC -> High Order Component -> A component wrapping another component */}
         <Route path="/reservations" exact component={Reservations} />
-        {/* <Route path="/" exact render={() => <Home name="Stefano" />} /> */}
+        {/* Reservations is getting history, location and match thank for being inside of a Route */}
         {/* I want the <Reservations /> component to load on '/reservations' */}
       </Router>
     </div>

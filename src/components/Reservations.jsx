@@ -7,7 +7,7 @@ import { Alert, ListGroup, Spinner, Col, Row, Container } from 'react-bootstrap'
 import { format, parseISO } from 'date-fns'
 import ReservationForm from './ReservationForm'
 
-const Reservations = () => {
+const Reservations = ({ location, history, match }) => {
 
     // 'this' is always an object
     // 'this' is filled with properties and methods belonging to the current INSTANCE of the class
